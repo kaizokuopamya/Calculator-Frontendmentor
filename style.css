@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+}
+
+.attribution {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--bright-orange);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 100%, 50%);
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
