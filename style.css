@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
 *,
 *::after,
 *::before {
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -9,10 +10,221 @@
   --bright-orange: hsl(31, 77%, 52%);
 }
 
+.theme1 {
+  /* Theme 1  */
+  /* background */
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-toggle: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+  /* keys */
+  --del-key-bg: hsl(225, 21%, 49%);
+  --del-key-shadow: hsl(224, 28%, 35%);
+  --equal-key-bg: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --num-key-background: hsl(30, 25%, 89%);
+  --num-key-shadow: hsl(28, 16%, 65%);
+  /* text */
+  --key-text: hsl(60, 10%, 19%);
+  --text: #fff;
+}
+
+.theme2 {
+  /* Theme 2 */
+  /* background */
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-toggle: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+  /* keys */
+  --del-key-bg: hsl(185, 42%, 37%);
+  --del-key-shadow: hsl(185, 58%, 25%);
+  --equal-key-bg: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+  --num-key-background: hsl(45, 7%, 89%);
+  --num-key-shadow: hsl(35, 11%, 61%);
+  /* text */
+  --key-text: hsl(60, 10%, 19%);
+  --text: hsl(60, 10%, 19%);
+}
+
+.theme3 {
+  /* Theme 3 */
+  /* backgrounds */
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-toggle: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+  /* keys */
+  --del-key-bg: hsl(281, 89%, 26%);
+  --del-key-shadow: hsl(285, 91%, 52%);
+  --equal-key-bg: hsl(176, 100%, 44%);
+  --equal-key-shadow: hsl(177, 92%, 70%);
+  --num-key-background: hsl(268, 47%, 21%);
+  --num-key-shadow: hsl(290, 70%, 36%);
+  /* text */
+  --key-text: hsl(52, 100%, 62%);
+  --text: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+}
+
+body {
+  width: 100%;
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-main);
+  color: var(--key-text);
+}
+
+main {
+  background-color: var(--bg-main);
+  padding: 2rem;
+}
+
+.calc_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+}
+
+.calc_theme {
+  margin-right: 1rem;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+.calc__toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.calc_keys {
+  display: grid;
+  border-radius: 0.8rem;
+  gap: 1rem;
+  background: var(--bg-toggle);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 1.5rem;
+}
+
+.calc_keys button {
+  width: 5rem;
+  height: 3.2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  font-weight: 800;
+  color: var(--key-text);
+  border-radius: 0.3rem;
+  background: var(--num-key-background);
+  font-family: "League Spartan", sans-serif;
+  box-shadow: 0px 0.3rem 1px 0px var(--num-key-shadow);
+}
+
+.calc_keys button:active {
+  opacity: 0.8;
+}
+
+.calc_keys .del {
+  font-size: 1.4rem;
+  color: #fff;
+  background: var(--del-key-bg);
+  box-shadow: 0px 0.3rem 1px 0px var(--del-key-shadow);
+}
+
+.calc_keys .reset {
+  width: 100%;
+  font-size: 1.4rem;
+  color: #fff;
+  grid-column: span 2;
+  background: var(--del-key-bg);
+  box-shadow: 0px 0.3rem 1px 0px var(--del-key-shadow);
+}
+
+.calc_keys .equal {
+  width: 100%;
+  font-size: 1.4rem;
+  color: #fff;
+  grid-column: span 2;
+  background: var(--equal-key-bg);
+  box-shadow: 0px 0.3rem 1px 0px var(--equal-key-shadow);
+}
+
+.num {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.4rem;
+}
+
+p {
+  margin-left: 1rem;
+  font-size: 0.6rem;
+}
+
+.toggle {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--equal-key-bg);
+  appearance: none;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.toggle:hover {
+  cursor: pointer;
+}
+
+.tri-state-toggle {
+  width: 3.8rem;
+  height: 1.3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  background: var(--bg-toggle);
+  border-radius: 1.5rem;
+}
+
+#one {
+  opacity: 1;
+}
+
+.calc_input {
+  width: 100%;
+  height: 6rem;
+  margin: 1rem 0;
+  border-radius: 0.8rem;
+  background: var(--bg-screen);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0.5rem 1.5rem;
+}
+
+.previous-operand {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.current-operand {
+  font-size: 2.5rem;
+}
+
 .attribution {
   width: 80%;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: .5rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   text-align: center;
@@ -22,9 +234,19 @@
 
 .attribution a {
   text-decoration: none;
-  color: hsl(228, 100%, 50%);
+  color: var(--equal-key-bg);
 }
 
 .attribution a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 420px) {
+  main{
+    padding: 2rem 1rem;
+  }
+  .calc_keys button {
+    width: 3.8rem;
+    height: 3.6rem;
+  }
 }
